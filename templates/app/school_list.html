@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>school</title>
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>SchoolList</title>
     <style>
-        body
-        {
-            background-color: rgb(216, 102, 102);
-        }
         h1
         {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-color: aqua;
-            color: rgb(134, 73, 192);
-            border-radius: 50%;
+            background-color: rgb(113, 113, 185);
         }
     </style>
-</head>
-<body>
+{% endblock %}
+
+{% block body_block %}
     <center>
-        <h1>List of school objects</h1>
+        <h1>List OF School Objects</h1>
+
         {% for school in schools %}
-        <a href="{{sname.pk}}"><h2>{{school.sname}}</h2></a>
+            <a href="{{school.pk}}"><h2>{{school.sname}}</h2></a>
         {% endfor %}
     </center>
-</body>
-</html>
+{% endblock %}

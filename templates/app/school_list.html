@@ -1,5 +1,4 @@
 {% extends 'app/dummy.html' %}
-
 {% block title %}
     <title>SchoolList</title>
     <style>
@@ -9,11 +8,9 @@
         }
     </style>
 {% endblock %}
-
 {% block body_block %}
     <center>
         <h1>List OF School Objects</h1>
-
         {% for school in schools %}
             <a href="{{school.pk}}"><h2>{{school.sname}}</h2></a>
         {% endfor %}

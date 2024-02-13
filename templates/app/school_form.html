@@ -1,0 +1,32 @@
+{% extends 'app/dummy.html' %}
+{% block title %}
+    <title>SchoolCreate</title>
+    <style>
+        h1
+        {
+            background-color: rgb(113, 113, 185);
+        }
+        form
+        {
+            background-color: rgb(162, 100, 220);
+        }
+    </style>
+{% endblock %}
+{% block body_block %}
+    <center>
+{% if form.instance.pk %}
+        <h1>SchoolUpdate Form</h1>
+{% else %}
+        <h1>SchoolCreate form</h1>
+{% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}       
+    {% if form.instance.pk %}
+        <input type="submit" value="UpdateSchool">
+    {% else %}
+        <input type="submit" value="CreateSchool">
+    {% endif %}
+        </form>  
+    </center>
+{% endblock %}

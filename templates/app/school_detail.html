@@ -15,26 +15,29 @@
 {% endblock %}
 
 {% block body_block %}
-    <center>
-        <h1>Detail Information of {{sclobject.sname}}</h1>
-        <h1>Name of the school is {{sclobject.sname}}</h1>       
-        <h1>Principal of the school is {{sclobject.sprincipal}}</h1>        
-        <h1>location of the school is {{sclobject.slocation}}</h1>
+<center>
+    <h1>Detail Information of {{sclobject.sname}}</h1>
+    <h1>Name of the school is {{sclobject.sname}}</h1>   
+    <h1>Principal of the school is {{sclobject.sprincipal}}</h1>   
+    <h1>location of the school is {{sclobject.slocation}}</h1>
 
 <h1>Student Details Are</h1>
 
 <table border="3px">
-    <tr>
-        <th>Student Name</th>
-        <th>Student age</th>
-    </tr>
+<tr>
+    <th>Student Name</th>
+    <th>Student age</th>
+</tr>
 
-    {% for st in sclobject.students.all %}
-        <tr>
-            <td>{{st.stname}}</td>
-            <td>{{st.stage}}</td>
-        </tr>
-    {% endfor %}
+{% for st in sclobject.students.all %}
+    <tr>
+        <td>{{st.stname}}</td>
+        <td>{{st.stage}}</td>
+    </tr>
+{% endfor %}
+
 </table>
-    </center>
+<a href="{% url 'SchoolUpdate' pk=sclobject.pk   %}" class="btn btn-danger">SchoolUpdate</a>
+<a href="{% url 'SchoolDelete' pk=sclobject.pk %}" class="btn btn-secondary">SchoolDelete</a>
+</center>
 {% endblock %}
